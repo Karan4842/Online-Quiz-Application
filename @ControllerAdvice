@@ -1,0 +1,8 @@
+@RestController
+@RequestMapping("/api/users")
+public class UserController {
+    @PostMapping
+    public ResponseEntity<User> registerUser(@RequestBody @Valid User user) {
+        return ResponseEntity.ok(userService.save(user));
+    }
+}
